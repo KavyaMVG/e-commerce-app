@@ -1,0 +1,53 @@
+.img-section {
+  width: 960px;
+  height: 640px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bg-img-women {
+  background-image: url("https://image.hm.com/content/dam/global_campaigns/season_08/divided/5038j/5038J-3x2-1.jpg?scale=size[960]&sink=format[jpeg],quality[80]");
+}
+
+.bg-img-man {
+  background-image: url("https://image.hm.com/content/dam/global_campaigns/season_08/men/3188/3188-3x2-1-new-classics.jpg?scale=size[960]&sink=format[jpeg],quality[80]");
+}
+.bg-img-home {
+  background-image: url("https://www2.hm.com/content/dam/regional-local-activities/seu/master-mcf/2023-season-8/home/affordable-basics/TCH_affordablebasics_3x2_2.png?scale=size[960]&sink=format[png],quality[80]");
+}
+
+.heading {
+  text-align: center;
+  padding-top: 40%;
+  font-weight: bold;
+  font-size: 40px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.shop-btn {
+  color: #222222;
+  font-size: 13px;
+  padding: 8px;
+  background-color: #ffffff;
+  font-weight: bold;
+  border: 0;
+  display: block;
+  margin: auto;
+}
+.d-flex {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.color-white {
+  color: #ffffff;
+}
