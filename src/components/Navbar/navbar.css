@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  margin-right: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 2rem;
+}
+
+.search {
+  border: 1px solid #fff;
+  padding: 5px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  width: 150px;
+}
+
+.list li:hover {
+  color: #ffd700;
+}
