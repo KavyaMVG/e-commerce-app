@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
 
 //picture, article name, price, color
 
@@ -11,6 +12,12 @@ import { Card, Image } from "semantic-ui-react";
 const WomenCollection = ({ productListWoman }) => {
   // console.log("womenColle", productListWoman);
 
+  const navigate = useNavigate();
+
+  const handleCardClick = (product) => {
+    navigate(`/product-page`, { state: { product } });
+  };
+
   return (
     <div style={{ padding: "2rem" }}>
       <h1 style={{ textAlign: "center", marginBottom: "1rem" }}>
@@ -18,7 +25,7 @@ const WomenCollection = ({ productListWoman }) => {
       </h1>
       <Card.Group itemsPerRow={4}>
         {productListWoman?.map((product, idx) => (
-          <Card key={idx}>
+          <Card key={idx} onClick={() => handleCardClick(product)}>
             <Image src={product?.allArticleImages[0]} wrapped ui={false} />
             <Card.Content>
               <Card.Header>{product?.name}</Card.Header>

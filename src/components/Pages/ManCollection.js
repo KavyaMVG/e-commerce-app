@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { getManProductsList } from "../../api";
 import { Card, Image } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
 
 const ManCollection = () => {
   const [mensCollecton, setMensCollection] = useState([]);
+
+  const navigate = useNavigate();
+
+  const handleCardClick = (product) => {
+    navigate(`/product-page`, { state: { product } });
+  };
 
   useEffect(() => {
     getManProductsList()
@@ -20,7 +27,7 @@ const ManCollection = () => {
       </h1>
       <Card.Group itemsPerRow={4}>
         {mensCollecton?.map((product, idx) => (
-          <Card key={idx}>
+          <Card key={idx} onClick={() => handleCardClick(product)}>
             <Image src={product?.allArticleImages[0]} wrapped ui={false} />
             <Card.Content>
               <Card.Header>{product?.name}</Card.Header>
