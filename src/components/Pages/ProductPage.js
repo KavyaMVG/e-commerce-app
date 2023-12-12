@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Image, Header, Segment, Button, Label } from "semantic-ui-react";
 
-const ProductPage = ({ setProductCount, productCount }) => {
+const ProductPage = ({
+  setProductCount,
+  productCount,
+  setCartProduct,
+  cartProduct,
+}) => {
   const location = useLocation();
   const product = location?.state.product;
   const [size, setSize] = useState("");
@@ -18,6 +23,7 @@ const ProductPage = ({ setProductCount, productCount }) => {
       setError(false);
       setAddedToCart(true);
       setProductCount(productCount + 1);
+      setCartProduct([...cartProduct, product]);
       setTimeout(() => {
         setAddedToCart(false);
       }, 2000);
@@ -50,23 +56,25 @@ const ProductPage = ({ setProductCount, productCount }) => {
             <Image src={image} size="small" centered />
           ))}
         </Segment>
-        {product?.variantSizes?.map((variant, idx) => (
-          <Label
-            key={idx}
-            style={{
-              padding: ".8rem 2rem",
-              marginRight: ".5rem",
-              textAlign: "center",
-              color: size === variant.filterCode ? "white" : "initial",
+        <div>
+          {product?.variantSizes?.map((variant, idx) => (
+            <Label
+              key={idx}
+              style={{
+                padding: ".8rem 2rem",
+                marginRight: ".5rem",
+                textAlign: "center",
+                color: size === variant.filterCode ? "white" : "initial",
 
-              backgroundColor:
-                size === variant.filterCode ? "black" : "lightgray",
-            }}
-            onClick={(e, data) => setSize(data.children)}
-          >
-            {variant.filterCode}
-          </Label>
-        ))}
+                backgroundColor:
+                  size === variant.filterCode ? "black" : "lightgray",
+              }}
+              onClick={(e, data) => setSize(data.children)}
+            >
+              {variant.filterCode}
+            </Label>
+          ))}
+        </div>
         {error && <p style={{ color: "red" }}>Please select a size</p>}
         <div style={{ margin: "1rem 0rem" }}>
           <Button color="teal" onClick={handleCart}>

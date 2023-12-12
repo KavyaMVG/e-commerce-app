@@ -12,6 +12,7 @@ import Cart from "../src/components/Pages/Cart";
 const App = () => {
   const [productListWoman, setProductListWoman] = useState([]);
   const [productCount, setProductCount] = useState(0);
+  const [cartProduct, setCartProduct] = useState([]);
 
   useEffect(() => {
     getProductsList()
@@ -28,7 +29,10 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Main />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
+          <Route
+            path="/cart"
+            element={<Cart cartProduct={cartProduct} />}
+          ></Route>
 
           <Route
             path="/women"
@@ -40,6 +44,8 @@ const App = () => {
               <ProductPage
                 setProductCount={setProductCount}
                 productCount={productCount}
+                setCartProduct={setCartProduct}
+                cartProduct={cartProduct}
               />
             }
           ></Route>
