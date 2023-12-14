@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Icon } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
+import { useClerk } from "@clerk/clerk-react";
 
 import "./navbar.css";
 
 const Navbar = ({ productCount }) => {
+  const { openSignIn } = useClerk();
+
+  const handleSignIn = (e) => {
+    openSignIn();
+  };
+
   return (
     <div>
       <div className="navbar">
@@ -46,6 +53,9 @@ const Navbar = ({ productCount }) => {
         <div className="search">
           <input type="search" placeholder="Search...." />
         </div>
+        <Button circular={true} onClick={handleSignIn}>
+          <Icon name="user" />
+        </Button>
       </div>
     </div>
   );

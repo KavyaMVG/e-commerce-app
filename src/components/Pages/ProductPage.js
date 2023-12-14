@@ -5,12 +5,13 @@ import { Image, Header, Segment, Button, Label } from "semantic-ui-react";
 const ProductPage = ({
   setProductCount,
   productCount,
+  setSize,
+  size,
   setCartProduct,
   cartProduct,
 }) => {
   const location = useLocation();
   const product = location?.state.product;
-  const [size, setSize] = useState("");
   const [error, setError] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
 
