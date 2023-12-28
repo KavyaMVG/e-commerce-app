@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const getProductsList = async () => {
+  console.log(process.env.REACT_APP_RAPID_API_KEY);
   try {
     const response = await axios.get(
       "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list",
@@ -12,8 +13,7 @@ export const getProductsList = async () => {
           concepts: "MODERN CLASSIC",
         },
         headers: {
-          "X-RapidAPI-Key":
-            "217be2d057mshc9e6558d6429245p1364d6jsn0c1d5625e7c8",
+          "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
           "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
         },
       }
@@ -37,8 +37,7 @@ export const getManProductsList = async () => {
           sortBy: "newProduct",
         },
         headers: {
-          "X-RapidAPI-Key":
-            "217be2d057mshc9e6558d6429245p1364d6jsn0c1d5625e7c8",
+          "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
           "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
         },
       }
@@ -61,8 +60,7 @@ export const getHomeProductsList = async () => {
           sortBy: "homewareStyles",
         },
         headers: {
-          "X-RapidAPI-Key":
-            "217be2d057mshc9e6558d6429245p1364d6jsn0c1d5625e7c8",
+          "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
           "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
         },
       }
