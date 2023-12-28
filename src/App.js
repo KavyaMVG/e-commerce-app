@@ -21,6 +21,7 @@ const App = () => {
   const [productCount, setProductCount] = useState(0);
   const [cartProduct, setCartProduct] = useState([]);
   const [size, setSize] = useState("");
+  const [userName, setUserName] = useState("");
 
   useEffect(() => {
     getProductsList()
@@ -34,13 +35,19 @@ const App = () => {
     <ClerkProvider publishableKey={clerkPubKey}>
       <div className="App">
         <Router>
-          <Navbar productCount={productCount} />
+          <Navbar productCount={productCount} userName={userName} />
 
           <Routes>
             <Route path="/" element={<Main />}></Route>
             <Route
               path="/cart"
-              element={<Cart cartProduct={cartProduct} size={size} />}
+              element={
+                <Cart
+                  cartProduct={cartProduct}
+                  size={size}
+                  setUserName={setUserName}
+                />
+              }
             ></Route>
 
             <Route

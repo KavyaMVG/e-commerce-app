@@ -46,8 +46,11 @@ const ProductPage = ({
         <Header as="h1">{product?.name}</Header>
         <p>{product?.price?.formattedValue}</p>
 
-        {product?.articleColorNames?.map((colorName) => (
-          <div style={{ display: "inline-block", marginRight: ".5rem" }}>
+        {product?.articleColorNames?.map((colorName, idx) => (
+          <div
+            key={idx}
+            style={{ display: "inline-block", marginRight: ".5rem" }}
+          >
             <p>{colorName}</p>
           </div>
         ))}

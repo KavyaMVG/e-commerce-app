@@ -13,7 +13,7 @@ export const getProductsList = async () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "b1cffb1ac4msh24a012b1815661bp1f038djsn8a811c1db88e",
+            "217be2d057mshc9e6558d6429245p1364d6jsn0c1d5625e7c8",
           "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
         },
       }
@@ -38,7 +38,7 @@ export const getManProductsList = async () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "b1cffb1ac4msh24a012b1815661bp1f038djsn8a811c1db88e",
+            "217be2d057mshc9e6558d6429245p1364d6jsn0c1d5625e7c8",
           "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
         },
       }
@@ -62,7 +62,7 @@ export const getHomeProductsList = async () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "b1cffb1ac4msh24a012b1815661bp1f038djsn8a811c1db88e",
+            "217be2d057mshc9e6558d6429245p1364d6jsn0c1d5625e7c8",
           "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
         },
       }

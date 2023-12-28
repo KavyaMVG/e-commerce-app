@@ -33,8 +33,9 @@ const WomenCollection = ({ productListWoman }) => {
                 <span className="date">{product?.price?.formattedValue}</span>
               </Card.Meta>
               <div style={{ display: "flex", margin: "0" }}>
-                {product.rgbColors.map((bgColor) => (
+                {product.rgbColors.map((bgColor, idx) => (
                   <li
+                    key={idx}
                     className="item"
                     style={{
                       color: `${bgColor}`,
