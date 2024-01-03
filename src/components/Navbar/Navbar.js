@@ -17,7 +17,9 @@ const Navbar = ({ productCount, userName }) => {
     <div className="navbar">
       <div style={{ display: "flex", alignItems: "baseline" }}>
         <div className="logo">
-          <h1>Logo</h1>
+          <Link to="/" style={{ color: "#000" }}>
+            <h1>Logo</h1>
+          </Link>
         </div>
         <div>
           <ul className="list">

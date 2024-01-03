@@ -1,8 +1,7 @@
 import axios from "axios";
 
 export const getProductsList = async () => {
-  console.log(process.env.REACT_APP_RAPID_API_KEY);
-  try {
+   try {
     const response = await axios.get(
       "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list",
       {
